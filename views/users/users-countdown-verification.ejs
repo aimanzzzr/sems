@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <% if(typeof csrfToken != undefined) {%> 
+      <meta name="token_id" content="<%= csrfToken %>">  
+    <% } %> 
+    <% if(typeof page != undefined) {%> 
+        <meta name="page" content="<%= page %>">  
+    <% } %> 
+    <% if(typeof admin_id != undefined) {%> 
+        <meta name="admin_document" content="<%= admin_id %>">  
+    <% } %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>User Verification</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="/stylesheets/RS-PROG-styles.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    <form class="form-signin russo-text" action="/api/userVerification" method="POST">
+      <h1 class="h3 mb-3 font-weight-normal russo-text" style="color: white;">
+        <% if(typeof username != undefined) {%>
+          <%= username %>
+        <% } %>
+      </h1>
+      <div class="form-group">
+        <label for="password" class="sr-only">PASSWORD</label>
+        <% if(typeof username != undefined) {%>
+          <input type="hidden" name="username" id="username" value="<%= username %>"/>
+        <% } %>
+        <input type="password" id="password" name="password" class="form-control" autocomplete="off" placeholder="PASSWORD" required autofocus>
+        <small id="password_error" class="form-text" style="color: red;"></small>
+      </div>
+      <div class="checkbox mb-3" style="color: white;">
+        <label>
+          <input type="checkbox" name="displayPassword" class="displayPassword" id="displayPassword" onclick="showPassword()"> Show Password
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">SIGN IN</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2021 | RS-PROG.COM</p>
+    </form>
+    <script>
+      function showPassword(){
+          let password = document.getElementById('password');
+          let checkbox = document.getElementById('displayPassword');
+
+          if(checkbox.checked){
+              password.type = "text";
+          }else{
+              password.type = "password";
+          }
+      }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="/javascripts/user-controller.js" type="module"></script>
+    <script src="/javascripts/general-controller.js" type="module"></script>
+  </body>
+</html>

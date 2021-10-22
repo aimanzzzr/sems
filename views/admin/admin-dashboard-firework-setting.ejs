@@ -1,0 +1,102 @@
+<%- include('./layouts/admin-dashboard-header'); -%>
+<body>
+    <div class="row clear-margin-padding vh-100 customs-grid">
+        <%- include('./layouts/admin-dashboard-navigation'); -%>
+        <div class="col clear-margin-padding">
+            <%- include('./layouts/admin-dashboard-jumbotron'); -%>
+            <div class="container">
+                <section id="firework-section">
+                    <h2 id="firework-setting-title" class="custom-font"><hr>Firework Setting<hr></h2>
+                    <div class="col clear-margin-padding" id="log" style="padding-bottom: 4em;">
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <label for="firework_shell_type">Shell Type</label>
+                                <select class="form-control" id="firework_shell_type">
+                                <option>Random</option>
+                                <option>Crackle</option>
+                                <option>Crossette</option>
+                                <option>Crysanthemum</option>
+                                <option>Falling Leaves</option>
+                                <option>Floral</option>
+                                <option>Ghost</option>
+                                <option>Horse Tail</option>
+                                <option>Palm</option>
+                                <option>Ring</option>
+                                <option>Strobe</option>
+                                <option>Willow</option>
+                                </select>
+                            </div>
+                            <div class="form-group col">
+                                <label for="firework_shell_size">Shell Size</label>
+                                <select class="form-control" id="firework_shell_size">
+                                    <option>3"</option>
+                                    <option>4"</option>
+                                    <option>6"</option>
+                                    <option>8"</option>
+                                    <option>12"</option>
+                                    <option>16"</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <label for="firework_quality">Quality</label>
+                                <select class="form-control" id="firework_quality">
+                                <option>Low</option>
+                                <option>Normal</option>
+                                <option>High</option>
+                                </select>
+                            </div>
+                            <div class="form-group col">
+                                <label for="firework_sky_lighting">Sky Lighting</label>
+                                <select class="form-control" id="firework_sky_lighting">
+                                <option>None</option>
+                                <option>Dim</option>
+                                <option>Normal</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <label for="firework_scale">Scale</label>
+                                <select class="form-control" id="firework_scale">
+                                <option>50%</option>
+                                <option>62%</option>
+                                <option>75%</option>
+                                <option>90%</option>
+                                <option>100%</option>
+                                <option>150%</option>
+                                <option>200%</option>
+                                </select>
+                            </div>
+                            <div class="form-group col">
+                                <label for="firework_final_mode_start">Finale Mode Start</label>
+                                <select class="form-control" id="firework_final_mode_start">
+                                <option>At Go To Message Button Pressed</option>
+                                <option>1 Minute then redirect</option>
+                                <option>2 Minute then redirect</option>
+                                <option>3 Minute then redirect</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group form-check col-2" style="padding-left:1.6em">
+                                <input type="checkbox" class="form-check-input" id="firework_auto_fire">
+                                <label class="form-check-label" for="firework_auto_fire">Auto Fire</label>
+                            </div>
+                            <div class="form-group form-check col-2">
+                                <input type="checkbox" class="form-check-input" id="firework_finale_mode">
+                                <label class="form-check-label" for="firework_finale_mode">Finale Mode</label>
+                            </div>
+                            <div class="form-group form-check col-2">
+                                <input type="checkbox" class="form-check-input" id="firework_sound">
+                                <label class="form-check-label" for="firework_sound">Sound</label>
+                            </div>
+                        </div>
+                        <button id="update_firework_setting" class="btn btn-primary">Update Firework Setting</button>
+                    </div>
+                </section>
+                <%- include('./layouts/admin-dashboard-modals'); -%>
+            </div>
+        </div>
+    <%- include('./layouts/admin-dashboard-footer'); -%>

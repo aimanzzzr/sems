@@ -1,0 +1,87 @@
+<%- include('./layouts/admin-dashboard-header'); -%>
+<body>
+    <div class="row clear-margin-padding vh-100 customs-grid">
+        <%- include('./layouts/admin-dashboard-navigation'); -%>
+        <div class="col clear-margin-padding">
+            <%- include('./layouts/admin-dashboard-jumbotron'); -%>
+            <div class="container">
+                <div id="alert-container"></div>
+                <h2 id="users-title" class="custom-font">Users Setting<hr></h2>
+                <div class="col clear-margin-padding" id="users" style="padding-bottom: 1em;">
+                    <form id="user-form" method="POST">
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <label for="fullname">Full Name&nbsp;<span style="color: red;">*</span></label>
+                                <input type="text" class="form-control" id="fullname" autocomplete="off" required>
+                                <small id="fullname_error" class="form-text" style="color: red;"></small>
+                            </div>
+                            <div class="form-group col">
+                                <label for="username">Username&nbsp;<span style="color: red;">*</span></label>
+                                <input type="text" class="form-control" id="username" autocomplete="off" required>
+                                <input type="hidden" class="form-control" id="old_username" autocomplete="off">
+                                <small id="username_error" class="form-text" style="color: red;"></small>
+                                <small id="username_help" class="form-text text-muted">This username will be generated into links to be share</small>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <label for="password">Password&nbsp;<span style="color: red;">*</span></label>
+                                <div class="input-group" style="padding-bottom: 0;">
+                                    <input type="password" class="form-control" id="password" minlength="8" maxlength="16" autocomplete="off">
+                                    <div class="input-group-append" id="display_password">
+                                        <a href="#" class="input-group-text btn"><i class="fas fa-eye" id="display_password_icon"></i></a>
+                                    </div>
+                                </div>
+                                <small id="password_error" class="form-text" style="padding-top: 0;color: red;"></small>
+                                <small id="password_help" class="form-text text-muted" style="padding-top: 0;">Privacy Intended, read more at <a href="/a/Dashboard/frequently-asked-question">here</a></small>
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="birthdate">Birth Date&nbsp;<span style="color: red;">*</span></label>
+                                <input type="date" class="form-control" id="birthdate" autocomplete="off" required>
+                                <small id="birthdate_error" class="form-text" style="color: red;"></small>
+                                <small id="birthdate_help" class="form-text text-muted">The Countdown will always be at 12:00 am on the following birthdate</small>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <label for="link">Shareable Links <span style="color: red;">* After user creation</span></label>
+                                <input type="text" class="form-control" id="link" autocomplete="off">
+                                <small id="link_help" class="form-text text-muted">Share this link to his/her</small>
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="is_active">Status</label>
+                                <select id="is_active" class="form-control" readonly>
+                                    <option value="1" selected>Active</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <label for="title_before">Countdown Document Title Before</label>
+                                <input type="text" class="form-control" id="title_before" autocomplete="off">
+                                <small id="title_before_help" class="form-text text-muted">Default : Happy Birthday Username!</small>
+                            </div>
+                            <div class="form-group col">
+                                <label for="title_on">Countdown Document Title On</label>
+                                <input type="text" class="form-control" id="title_on" autocomplete="off">
+                                <small id="title_on_help" class="form-text text-muted">Default : Happy Birthday Username!</small>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group form-check col-5 col-md-6" style="padding-left:1.6em">
+                                <input type="checkbox" class="form-check-input" id="is_firework">
+                                <label class="form-check-label" for="is_firework">Has Firework</label>
+                            </div>
+                            <div class="form-group form-check col-5">
+                                <input type="checkbox" class="form-check-input" id="is_password">
+                                <label class="form-check-label" for="is_password">Has Password</label>
+                            </div>
+                            <input type="hidden" id="user_document">
+                        </div>
+                        <input type="submit" id="update_user_info" name="update_user_info" class="btn btn-primary" value="Update User Info">
+                    </form>
+                </div>
+                <%- include('./layouts/admin-dashboard-modals'); -%>
+            </div>
+        </div>
+    <%- include('./layouts/admin-dashboard-footer'); -%>

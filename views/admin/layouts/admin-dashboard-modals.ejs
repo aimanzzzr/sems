@@ -1,0 +1,87 @@
+<!-- Delete Modal -->
+<div class="modal fade" id="delete_modal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="delete_modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <form id="delete_daily_message_modal">
+          <div class="modal-header">
+            <h5 class="modal-title" id="delete_modalLabel">Confirmation on deletion</h5>
+            <a href="#" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </a>
+          </div>
+          <div class="modal-body">
+            Any data cannot be recovered after you delete this
+            <input type="hidden" id="delete_daily_message_id">
+          </div>
+          <div class="modal-footer">
+            <a href="#" class="btn btn-secondary" data-dismiss="modal">Close</a>
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </div>
+        </form>
+      </div>
+    </div>
+</div> 
+
+<!-- Add/Edit Daily Message Modal -->
+<div class="modal fade" id="daily_message" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="daily_message_label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <form id="daily_message_modal">
+          <div class="modal-header">
+            <h5 class="modal-title" id="daily_message_label">[Action] Daily Message</h5>&nbsp;<span style="color: red;">*</span>
+            <a href="#" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </a>
+          </div>
+          <div class="modal-body">
+            <div class="form-row">
+                <div class="form-group col">
+                    <label for="daily_message">Message</label>
+                    <input type="text" class="form-control" id="daily_message" autocomplete="off" required>
+                    <input type="hidden" id="daily_message_method">
+                    <input type="hidden" id="daily_message_document">
+                    <small id="daily_message_error" class="form-text" style="color: red;"></small>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label for="daily_message_display_days">Display Days</label>
+                    <select class="form-control" id="daily_message_display_days">
+                        <option value="" selected>All week</option>
+                        <option value="false">Weekdays</option>
+                        <option value="true">Weekend</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label for="daily_message_time_interval">Time Interval</label>
+                    <select class="form-control" id="daily_message_time_interval">
+                        <option value="" selected>All day</option>
+                        <option value="1">Morning - 05.00 am until 12.00 pm</option>
+                        <option value="2">Lunch Break - 12.00 pm until 2.00 pm</option>
+                        <option value="3">Afternoon - 02.00 pm until 04.00 pm</option>
+                        <option value="4">Afternoon Break - 04.00 pm until 04.30 pm</option>
+                        <option value="5">Evening - 04.30 pm until 08.00 pm</option>
+                        <option value="6">Night - 08.00 pm until 12.00 am</option>
+                        <option value="7">Late Night - 12.00 am until 05.00 pm</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label for="daily_message_users">Users</label>
+                    <select class="form-control" id="daily_message_users">
+                        <option value="" selected>All Users</option>
+                    </select>
+                </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a href="#" class="btn btn-secondary" data-dismiss="modal">Close</a>
+            <button type="submit" class="btn btn-primary" id="daily_message_submit">Add New Daily Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+</div>

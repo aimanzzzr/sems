@@ -1,0 +1,85 @@
+<%- include('./layouts/admin-dashboard-header'); -%>
+<body>
+    <div class="row clear-margin-padding vh-100 customs-grid">
+        <%- include('./layouts/admin-dashboard-navigation'); -%>
+        <div class="col clear-margin-padding">
+            <%- include('./layouts/admin-dashboard-jumbotron'); -%>
+            <div class="container">
+                <h2 id="users-title" class="custom-font">Users Setting<hr></h2>
+                <div class="col clear-margin-padding" id="users" style="padding-bottom: 1em;">
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label for="full_name">Full Name</label>
+                            <input type="text" class="form-control" id="full_name">
+                        </div>
+                        <div class="form-group col">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" aria-describedby="username_help">
+                            <small id="username_help" class="form-text text-muted">This username will be generated into links to be share</small>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label for="password">Password</label>
+                            <div class="input-group" style="padding-bottom: 0;">
+                                <input type="password" class="form-control" id="password" aria-describedby="password_help">
+                                <div class="input-group-append"id="displayPassword">
+                                    <button class="input-group-text btn"><i class="fas fa-eye" id="displayPasswordIcons"></i></button>
+                                </div>
+                            </div>
+                            <small id="password_help" class="form-text text-muted" style="padding-top: 0;">Privacy Intended, read more at <a href="/a/Dashboard/frequently-asked-question">here</a></small>
+                        </div>
+                        <div class="form-group col">
+                            <label for="password_salt">Password's Salt</label>
+                            <input type="text" class="form-control" id="password_salt" aria-describedby="password_salt_help">
+                            <small id="password_salt_help" class="form-text text-muted">Key to encrypt your users password</small>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-6">
+                            <label for="users_birthdate">Birth Date</label>
+                            <input type="date" class="form-control" id="users_birthdate" aria-describedby="users_birthdate_help">
+                            <small id="users_birthdate_help" class="form-text text-muted">The Countdown will always be at 12:00 am on the following birthdate</small>
+                        </div>
+                        <div class="form-group col-6">
+                            <label for="users_is_active">Status</label>
+                            <select id="users_is_active" class="form-control" readonly>
+                            <option selected>Active</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label for="users_shareable_links">Shareable Links</label>
+                            <input type="text" class="form-control" id="users_shareable_links" aria-describedby="users_shareable_links_help">
+                            <small id="users_shareable_links_help" class="form-text text-muted">Share this link to his/her</small>
+                        </div>
+                        <div class="form-group col">
+                            <label for="users_title_if_not_birthday">Countdown Title 1</label>
+                            <input type="text" class="form-control" id="users_title_if_not_birthday" aria-describedby="users_title_if_not_birthday_help">
+                            <small id="users_shareable_links_help" class="form-text text-muted">Title When The Birthday Is Not Yet Arrive (1 day before)</small>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label for="users_title_if_not_birthday">Countdown Title 2</label>
+                            <input type="text" class="form-control" id="users_title_if_not_birthday" aria-describedby="users_title_if_not_birthday_help">
+                            <small id="users_shareable_links_help" class="form-text text-muted">Title When The Birthday Arrive (Less than 24 Hours)</small>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group form-check col-2" style="padding-left:1.6em">
+                            <input type="checkbox" class="form-check-input" id="is_firework">
+                            <label class="form-check-label" for="is_firework">Has Firework</label>
+                        </div>
+                        <div class="form-group form-check col-4">
+                            <input type="checkbox" class="form-check-input" id="has_password">
+                            <label class="form-check-label" for="has_password">Has Password</label>
+                        </div>
+                    </div>
+                    <button id="udpateUsersInfo" class="btn btn-primary">Update User Info</button>
+                </div>
+                <%- include('./layouts/admin-dashboard-modals'); -%>
+            </div>
+        </div>
+    <%- include('./layouts/admin-dashboard-footer'); -%>

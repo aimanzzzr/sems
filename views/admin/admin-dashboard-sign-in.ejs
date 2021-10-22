@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <% if(typeof csrfToken != undefined) {%> 
+        <meta name="token_id" content="<%= csrfToken %>">  
+    <% } %> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login to continue...</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/RSPROG-styles.css">
+</head>
+<body>
+    <div class="container">
+        <form id="login-form" method="POST">
+            <!-- <h1 style=" font-size:2em">LOG IN</h1> -->
+            <!-- <span id="message" style="font-family: 'Times New Roman', Times, serif"></span> -->
+            <!-- <input type="text" name="username" id="username" placeholder="USERNAME..." required autocomplete="off"/>
+            <input type="password" name="password" id="password" placeholder="PASSWORD..." required autocomplete="off"/>
+            <button class="btn btn-primary btn-block btn-large" type="submit" id="login-button" style="font-size:1.3em">LOG IN</button><br> -->
+            <a href="/auth/google" class="btn btn-primary btn-block btn-large"  style="font-size:1.3em">LOG IN WITH GOOGLE</a>
+            <!-- <input type="checkbox" name="displayPassword" class="displayPassword" id="displayPassword" style="padding-top: 12em;">&nbsp;&nbsp;Show Password -->
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+    <script src="/javascripts/admin-dashboard-controller.js"></script>
+</body>
+</html>

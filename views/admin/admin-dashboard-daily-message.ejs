@@ -1,0 +1,33 @@
+<%- include('./layouts/admin-dashboard-header'); -%>
+<body>
+    <div class="row clear-margin-padding vh-100 customs-grid">
+        <%- include('./layouts/admin-dashboard-navigation'); -%>
+        <div class="col clear-margin-padding">
+            <%- include('./layouts/admin-dashboard-jumbotron'); -%>
+            <div class="container">
+                <section id="daily-message-section">
+                    <div id="alert-container"></div>
+                    <h2 id="dailymessage-title" class="custom-font"><hr>Daily Message<hr></h2>
+                    <div class="col clear-margin-padding" id="dailymessage" style="padding-bottom: 2em;">
+                        <div style="padding-bottom: 1em;">
+                            <button class="btn btn-primary" id="add_dailymessage">Add New Daily Message</button>
+                            <small id="add_dailymessage_help" class="form-text text-muted">Daily Message will be displayed at countdown page</small>
+                        </div>
+                        <table class="table table-striped table-bordered" id="daily-message-table">
+                            <thead>
+                                <tr>
+                                    <th>Message</th>
+                                    <th>Status</th>
+                                    <th>Days</th>
+                                    <th>Time</th>
+                                    <th>Users</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </section>
+                <%- include('./layouts/admin-dashboard-modals'); -%>
+            </div>
+        </div>
+    <%- include('./layouts/admin-dashboard-footer'); -%>

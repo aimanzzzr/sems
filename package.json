@@ -1,0 +1,32 @@
+{
+  "name": "sems",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aimanzzzr/sems.git"
+  },
+  "author": "Aimanzzzr/rs-prog",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aimanzzzr/sems/issues"
+  },
+  "homepage": "https://github.com/aimanzzzr/sems#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-mongo": "^4.6.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "mongoose": "^6.0.12",
+    "passport": "^0.5.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-local": "^1.0.0"
+  }
+}
