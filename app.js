@@ -1,15 +1,12 @@
 // Application Requirements
 const path          =   require('path');
-const createError   =   require('http-errors');
 const express       =   require('express');
 const mongoose      =   require('mongoose');
 const dotenv        =   require('dotenv');
-const morgan        =   require('morgan');
 const passport      =   require('passport');
 const session       =   require('express-session');
-const MongoStore    =   require('connect-mongo')(session);
+const MongoStore    =   require('connect-mongo');
 const dbconn        =   require('./config/database');
-const DeviceDetector=   require('node-device-detector');
 
 // Initialize Express App
 const app = express();
@@ -17,10 +14,6 @@ const app = express();
 dotenv.config({path:'./config/.env'});
 // Initialize DB Connection 
 dbconn();
-// Initialize Morgan In Development
-if(process.env.NODE_ENV === 'development'){
-    app.use(morgan('dev'));
-}
 // Initialize view engine
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine','ejs');
@@ -42,21 +35,6 @@ require('./config/passport-authentication');
 // Initialize Passport Middleware
 app.use(passport.initialize());
 app.use(passport.session());
-
-//Device Detector
-const deviceDetector = new DeviceDetector;
-const hasBotResult = (result)=>{
-    return result && result.name;
-}
-const middleWareDetect = (req,res,next)=>{
-    const useragents = req.headers['user-agent'];
-    req.useragents = useragents;
-    req.device = deviceDetector.detect(useragents);
-    req.bot =deviceDetector.parseBot(useragents);
-    next();
-}
-
-app.use(middleWareDetect);
 
 // Initialize Static Folders
 app.use(express.static(path.join(__dirname,'public')));
