@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "npm run dev",
-    "start": "npm start"
+    "test": "nodemon app",
+    "start": "cross-env NODE_ENV=production node app"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
     "express-session": "^1.17.2",
     "mongoose": "^6.0.12",
     "morgan": "^1.10.0",
+    "nodemon": "^2.0.14",
     "passport": "^0.5.0",
     "passport-google-oauth20": "^2.0.0",
     "passport-local": "^1.0.0"
